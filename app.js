@@ -2,11 +2,16 @@
 
 const chechIfEqual = (ob1, ob2) => Object.keys(ob1).every(key => ob1[key] === ob2[key]);
 
-const ob1 = {
-    1: "ww"
-}
-const ob2 = {
-    1: "ww"
-}
+// 2. Write a JavaScript program to copy a string to the clipboard.
 
-console.log(chechIfEqual(ob1, ob2));
+const copyToClip = (btn, input) => {
+    btn.addEventListener("click", () => {
+        const inputValue = input.value;
+
+        navigator.clipboard.writeText(inputValue)
+            .then(() => {
+                input.value = ' ';
+            })
+            .catch(err => console.log(err))
+    });
+}
