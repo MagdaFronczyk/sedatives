@@ -17,4 +17,6 @@ const copyToClip = (btn, input) => {
 
 // 3. Write a JavaScript program to converts a specified number to an array of digits.
 
-const numberToArray = (number) => number.toString().split("");
+const numberToArray = number => number.toString().split("").map(el => parseInt(el));
+
+//cute solution const numberToArray = number => [...`${number}`].map(number=>parseInt(number));
