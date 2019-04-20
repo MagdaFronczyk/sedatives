@@ -7,7 +7,6 @@ const chechIfEqual = (ob1, ob2) => Object.keys(ob1).every(key => ob1[key] === ob
 const copyToClip = (btn, input) => {
     btn.addEventListener("click", () => {
         const inputValue = input.value;
-
         navigator.clipboard.writeText(inputValue)
             .then(() => {
                 input.value = ' ';
@@ -15,3 +14,7 @@ const copyToClip = (btn, input) => {
             .catch(err => console.log(err))
     });
 }
+
+// 3. Write a JavaScript program to converts a specified number to an array of digits.
+
+const numberToArray = (number) => number.toString().split("");
