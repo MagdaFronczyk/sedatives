@@ -15,8 +15,17 @@ const copyToClip = (btn, input) => {
     });
 }
 
-// 3. Write a JavaScript program to converts a specified number to an array of digits.
+// 3. Write a JavaScript program to convert a specified number to an array of digits.
 
 const numberToArray = number => number.toString().split("").map(el => parseInt(el));
 
 //cute solution const numberToArray = number => [...`${number}`].map(number=>parseInt(number));
+
+// 4. Write a JavaScript program to filter out the specified values from an specified array. Return the original array without the filtered values.
+
+const filterArr = (arrayToFilter, originalArray) => {
+    const filtered = originalArray.filter(el => arrayToFilter.indexOf(el) < 0);
+    originalArray.length = 0;
+    filtered.forEach(el => originalArray.push(el));
+    return originalArray;
+}
