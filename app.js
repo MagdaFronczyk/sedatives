@@ -11,7 +11,7 @@ const copyToClip = (btn, input) => {
             .then(() => {
                 input.value = ' ';
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err));
     });
 }
 
@@ -24,8 +24,16 @@ const numberToArray = number => number.toString().split("").map(el => parseInt(e
 // 4. Write a JavaScript program to filter out the specified values from an specified array. Return the original array without the filtered values.
 
 const filterArr = (arrayToFilter, originalArray) => {
-    const filtered = originalArray.filter(el => arrayToFilter.indexOf(el) < 0);
+    // const filtered = originalArray.filter(el => arrayToFilter.indexOf(el) < 0);
+    const filtered = originalArray.filter(el => !arrayToFilter.includes(el)); /* ES6 solution */
     originalArray.length = 0;
     filtered.forEach(el => originalArray.push(el));
     return originalArray;
+}
+
+// 5. Write a JavaScript program to extract out the values at the specified indexes from an specified array.
+
+const filterAtIndex = (originalArray, arrayOfIndexes) => {
+    const filtered = originalArray.filter((el, index) => index === arrayOfIndexes[index]);
+    return filtered;
 }
