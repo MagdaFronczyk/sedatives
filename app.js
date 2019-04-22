@@ -37,3 +37,15 @@ const filterAtIndex = (originalArray, arrayOfIndexes) => {
     const filtered = originalArray.filter((el, index) => index === arrayOfIndexes[index]);
     return filtered;
 }
+
+// 6. Write a JavaScript program to remove non-printable ASCII characters from a given string.
+
+const removeUnprintableASCIIchars = (string) => {
+    let filtered = string
+        .split('')
+        .map((el, index) => string.charCodeAt(index))
+        .filter(el => el >= 31 && el <= 127)
+        .map(el => String.fromCharCode(el))
+        .join('');
+    return filtered
+}
