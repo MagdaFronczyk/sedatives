@@ -49,3 +49,10 @@ const removeUnprintableASCIIchars = (string) => {
         .join('');
     return filtered
 }
+
+// 7. Write a JavaScript program to convert the length of a given string in bytes.
+
+const stringLengthToBytes = (string) => {
+    constToBytes = new TextEncoder('utf-8').encode(string).length;
+    return constToBytes
+}
