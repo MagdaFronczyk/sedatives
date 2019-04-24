@@ -56,3 +56,8 @@ const stringLengthToBytes = (string) => {
     constToBytes = new TextEncoder('utf-8').encode(string).length;
     return constToBytes
 }
+
+// 8. Write a JavaScript program to return the minimum-maximum value of an array, after applying the provided function to set comparing rule.
+
+const minOrMax = (arr, comparator) =>
+    arr.reduce((a, b) => comparator);
