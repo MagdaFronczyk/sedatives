@@ -59,5 +59,28 @@ const stringLengthToBytes = (string) => {
 
 // 8. Write a JavaScript program to return the minimum-maximum value of an array, after applying the provided function to set comparing rule.
 
-const minOrMax = (arr, comparator) =>
-    arr.reduce((a, b) => comparator);
+const minOrMax = (arr) => arr.reduce((a, b) => a < b ? a : b);
+
+// 9 // make a function that takes in a single parameter
+// and returns a new promise. using setTimeout,
+// after 500 milliseconds, the promise will either
+// resolove or reject. if the input is a string,
+// the promise resolves with that same string
+// uppercased. if the input is anything but a string
+// it rejects with that same input
+//
+// call the function delayedUpperCase
+
+const delayedUpperCase = (input) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let err = typeof (input) === "string" ? false : true;
+            if (!err) {
+                resolve(input.toUpperCase());
+            } else {
+                reject(input);
+            }
+        }, 5000)
+    });
+}
+delayedUpperCase("test").then(res => console.log(res)).catch(err => console.log(err));
